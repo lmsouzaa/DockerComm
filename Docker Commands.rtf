@@ -1,0 +1,80 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Docker images\
+\
+Docker image history - historico das imagens, commits feitos na cria\'e7\'e3o da imagem.\
+\
+Teste de Portas, formatos e SSH\
+\
+-rastasheep/ubuntu-sshd -dockerhub\
+\
+-P -mapeia portas com qualquer valor automaticamente\
+-p portas iguais, interna e externa\
+\
+docker image inspect <id image>            - v\'ea a porta dispon\'edvel\
+docker container run -d -P <id image>     - roda com a porta que ele encontrar na imagem\
+docker port <container>                            -lista portas mapeadas\
+\
+ssh root@localhost -p <porta disponibilizada com comando anterior>\
+Password root - dispon\'edvel no dockerhub\
+\
+docker image inspect \'97format \'91\{\{.Config.ExposedPorts\}\}\'92 <id>  - info mais direto do inspect\
+\
+Rodando Servidor HTTPS com NodeJS com container Cloud9\
+\
+Docker run -d -v $(pwd):/workspace -p 8181:8181 -p3000:3000  <id> \'97auth username:password\
+\
+Levantar container do ssh\
+ \
+Docker images\
+Docker container run -d -P -p 3000:3000 <id image> - subindo\
+Docker port\
+Ssh root@localhost -p <porta disp.>\
+ Com volume:\
+ docker run -d -v $(pwd):/root \'97P -p 3000:3000  <id> \
+Instalar curl, nvm, node dentro do ssh\
+node server.js -rodando servidor\
+\'98C\
+Docker commit -m \'93add curl e nvm\'94 <id image>\
+\
+Docker Network\
+Docker network ls\
+Bridge - rede padrao dos container inicializados \
+\
+Docker network create my_net - criando uma rede\
+Conectando um container na rede: docker network connect my_net cloud81\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 Docker network disconnect my_net <namerede>\
+Docker network rm my_net \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+Imagem do Postgres\
+Docker pull postgres\
+Rode o postgres <comand no docker hub>  add -P para mapear outra porta automaticamente\
+Abrir o pgadmin \
+\
+Instru\'e7\'e3o RUN\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
